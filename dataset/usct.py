@@ -3,12 +3,14 @@ from collections import OrderedDict
 from scipy.ndimage import uniform_filter
 import pytorch_lightning as pl
 from dataset.augmentor import buildAugmentor
-from utils.util import originalAfterCrop
+from utils.util import *
+import SimpleITK as sitk
+import numpy as np
 def load_final_test_sample_from_id(input_path, id):
     ct_img_file = os.path.join(input_path, "case"+id+ "_CT.nii.gz")
-    us_img_file = os.path.join(input_path, "case"+id+ "_US.nii.gz")
+    us_img_file = os.path.join(input_path, "case"+id+ "_US_ap.nii.gz")
     ct_img_mask_file = os.path.join(input_path, "case"+id+ "_CT_mask.nii.gz")
-    us_img_mask_file = os.path.join(input_path, "case"+id+ "_US_mask.nii.gz")
+    us_img_mask_file = os.path.join(input_path, "case"+id+ "_US_mask_ap_c.nii.gz")
 
     ct_img = sitk.ReadImage(ct_img_file)
     us_img = sitk.ReadImage(us_img_file)
@@ -304,8 +306,6 @@ class USCTDataModule(pl.LightningDataModule):
         # 1. data config
         # Train and Val should from the same data source
         file_list = load_json(args.input_file_list)
-        self.orig = args.orig
-        self.cas = args.cas
         self.test_input_file = None
         if 'test' in file_list.keys():
             self.test_input_file = file_list['test']
@@ -330,7 +330,7 @@ class USCTDataModule(pl.LightningDataModule):
         self.parallel_load_data = False
         self.seed = config.TRAINER.SEED  # 66
 
-    def setup(self):
+    def setup(self,stage='test'):
         """
         Setup train / val / test dataset. This method will be called by PL automatically.
         Args:

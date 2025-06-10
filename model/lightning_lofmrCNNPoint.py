@@ -46,7 +46,7 @@ class PL_LoFMRCNNPoint(pl.LightningModule):
             pointxml(l1_list, join(self.dump_dir,
                                    "testUS_" + batch['key'][b] + "_var_sort.mps"))
 
-    def test_step(self, batch):
+    def test_step(self, batch, batch_idx):
         with self.profiler.profile("LoFMR"):
             self.matcher(batch)
             self.nogt_test(batch)

@@ -49,9 +49,9 @@ _CN.LOFMR.COARSE.ATTENTION = 'linear'  # options: ['linear', 'full']
 _CN.LOFMR.COARSE.TEMP_BUG_FIX = True
 # 3. Coarse-Matching config
 _CN.LOFMR.MATCH_COARSE = CN()
-_CN.LOFMR.MATCH_COARSE.THR = 0.2 #dual_softmax: 0.5*0.5 = 0.25 0.2 for dual_softmax
+_CN.LOFMR.MATCH_COARSE.THR = 0.5 #dual_softmax: 0.5*0.5 = 0.25 0.2 for dual_softmax
 _CN.LOFMR.MATCH_COARSE.BORDER_RM = 2
-_CN.LOFMR.MATCH_COARSE.MATCH_TYPE = 'dual_softmax'  # options: ['sigmoid','softmax',dual_softmax, 'sinkhorn']
+_CN.LOFMR.MATCH_COARSE.MATCH_TYPE = 'sigmoid'  # options: ['sigmoid','softmax',dual_softmax, 'sinkhorn']
 _CN.LOFMR.MATCH_COARSE.DSMAX_TEMPERATURE = 0.1
 _CN.LOFMR.MATCH_COARSE.SKH_ITERS = 3
 _CN.LOFMR.MATCH_COARSE.SKH_INIT_BIN_SCORE = 1.0

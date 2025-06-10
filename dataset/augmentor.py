@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 import numpy as np
-from batchgenerators.transforms import AbstractTransform
+from batchgenerators.transforms.abstract_transforms import AbstractTransform
 from einops.einops import rearrange
 
 class GenerateCorrTransform3Test(AbstractTransform):
