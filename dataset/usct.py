@@ -10,7 +10,7 @@ def load_final_test_sample_from_id(input_path, id):
     ct_img_file = os.path.join(input_path, "case"+id+ "_CT.nii.gz")
     us_img_file = os.path.join(input_path, "case"+id+ "_US_ap.nii.gz")
     ct_img_mask_file = os.path.join(input_path, "case"+id+ "_CT_mask.nii.gz")
-    us_img_mask_file = os.path.join(input_path, "case"+id+ "_US_mask_ap_c.nii.gz")
+    us_img_mask_file = os.path.join(input_path, "case"+id+ "_US_mask_ap.nii.gz")
 
     ct_img = sitk.ReadImage(ct_img_file)
     us_img = sitk.ReadImage(us_img_file)
