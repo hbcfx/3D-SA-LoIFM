@@ -184,7 +184,7 @@ if __name__ == "__main__":
     output_folder = sys.argv[3]
     dataset_properties = sys.argv[4]
 
-    maybe_mkdir_p()
+    
 
     ct_data_identifiers = np.sort(list(set([x for x in listdir(input_folder) if '_CT.nii.gz' in x and 'mask' not in x])))
     ct_seg_identifiers = np.sort(list(set([x for x in listdir(input_folder) if '_CT_mask' in x])))

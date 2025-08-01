@@ -1,6 +1,8 @@
 # 3D-SA-LoIFM
 A Three-Dimensional Framework for Segmentation-Assisted Learning of Informative Feature Matching for Rigid Registration
 
+The method requires at least 15GB GPU memory. For python environment, please see the requirement.txt file.
+
 For the test example, please follow the steps as:
 1. first download the model file:https://huggingface.co/hbcfx/3D-SA-LoIFM/resolve/main/last.ckpt, copy it int the example folder
  
