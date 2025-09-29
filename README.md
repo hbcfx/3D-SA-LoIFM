@@ -3,6 +3,8 @@ A Three-Dimensional Framework for Segmentation-Assisted Learning of Informative 
 
 The method requires at least 15GB GPU memory. For python environment, please see the requirement.txt file.
 
+The training data can be downloaded from: [https://huggingface.co/datasets/hbcfx/Liver-3DUS-CT-registration/blob/main/3DSA-LoIFM-TrainingData.zip]
+
 For the test example, please follow the steps as:
 1. first download the model file:https://huggingface.co/hbcfx/3D-SA-LoIFM/resolve/main/last.ckpt, copy it int the example folder
  
